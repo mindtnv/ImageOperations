@@ -115,12 +115,14 @@
         <Compile Include="Effects\IntensityEffect.cs" />
         <Compile Include="Effects\NegativeEffect.cs" />
         <Compile Include="Effects\NegativeWithClampEffect.cs" />
+        <Compile Include="Effects\OneLine.cs" />
         <Compile Include="Effects\PaintingEffect.cs" />
         <Compile Include="Effects\QuantizationEffect.cs" />
         <Compile Include="Effects\RotateEffect.cs" />
         <Compile Include="Effects\ScaleEffect.cs" />
+        <Compile Include="Effects\SobelFilter.cs" />
         <Compile Include="Effects\SolarizeEffect.cs" />
-        <Compile Include="Effects\TextRotationEffect.cs" />
+        <Compile Include="Effects\TextRotationDetection.cs" />
         <Compile Include="Effects\ThresholdEffect.cs" />
         <Compile Include="Extensions\MathExtensions.cs" />
         <Compile Include="ImageForm.cs">

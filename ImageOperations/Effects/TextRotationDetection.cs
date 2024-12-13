@@ -7,7 +7,7 @@ using Size = OpenCvSharp.Size;
 
 namespace ImageOperations.Effects
 {
-    public class TextRotationEffect : IEffect
+    public class TextRotationDetection : IEffect
     {
         public Image Emit(Image source)
         {
@@ -39,7 +39,7 @@ namespace ImageOperations.Effects
 
                 foreach (var line in lines)
                 {
-                    double angle = line.Theta * 180.0 / Math.PI;
+                    var angle = line.Theta * 180.0 / Math.PI;
 
                     // Преобразуем радианы в градусы и фильтруем углы
                     if (Math.Abs(angle) < 45 || Math.Abs(angle) > 135)

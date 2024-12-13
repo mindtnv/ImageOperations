@@ -6,14 +6,14 @@ namespace ImageOperations.Effects
 {
     public class IntensityEffect : IEffect
     {
+        public double Factor { get; set; }
+        public IntensityEffectAction Action { get; set; }
+
         public IntensityEffect(IntensityEffectAction action, double factor)
         {
             Action = action;
             Factor = factor;
         }
-
-        public double Factor { get; set; }
-        public IntensityEffectAction Action { get; set; }
 
         public Image Emit(Image source)
         {
@@ -25,7 +25,7 @@ namespace ImageOperations.Effects
 
         private Image DecreaseIntensity(Image source)
         {
-                 var image = new Bitmap(source);
+            var image = new Bitmap(source);
             var sumR = 0.0;
             var sumG = 0.0;
             var sumB = 0.0;
@@ -157,6 +157,6 @@ namespace ImageOperations.Effects
     public enum IntensityEffectAction
     {
         Increase,
-        Descrease
+        Descrease,
     }
 }

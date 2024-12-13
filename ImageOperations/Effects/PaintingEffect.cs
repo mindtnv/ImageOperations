@@ -7,9 +7,8 @@ namespace ImageOperations.Effects
         public Image Emit(Image source)
         {
             var image = new Bitmap(source);
-            var palette = new []
+            var palette = new[]
             {
-                
                 Color.Navy,
                 Color.Blue,
                 Color.Purple,

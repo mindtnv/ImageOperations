@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
 using ImageOperations.Effects;
 
@@ -41,7 +40,7 @@ namespace ImageOperations
                     {
                         Name = $"{parameter.Name}Label",
                         Text = parameter.Name,
-                        Dock = DockStyle.Top
+                        Dock = DockStyle.Top,
                     };
                     var box = new ComboBox
                     {
@@ -49,26 +48,25 @@ namespace ImageOperations
                     };
                     var enumValues = Enum.GetValues(parameter.ParameterType);
                     foreach (var enumValue in enumValues)
-                    {
                         box.Items.Add(enumValue.ToString());
-                    }
 
                     box.Text = enumValues.GetValue(0).ToString();
                     values[parameter.Name] = enumValues.GetValue(0).ToString();
                     box.SelectedValueChanged += (sender, args) =>
                     {
-                        values[parameter.Name] = (sender as ComboBox).Text; 
+                        values[parameter.Name] = (sender as ComboBox).Text;
                     };
                     mainPanel.Controls.Add(box);
                     mainPanel.Controls.Add(textLabel);
                 }
+
                 if (parameter.ParameterType == typeof(int) || parameter.ParameterType == typeof(double))
                 {
                     var textLabel = new Label
                     {
                         Name = $"{parameter.Name}Label",
                         Text = parameter.Name,
-                        Dock = DockStyle.Top
+                        Dock = DockStyle.Top,
                     };
                     var textBox = new TextBox
                     {
@@ -103,9 +101,9 @@ namespace ImageOperations
             if (destType.IsEnum)
                 return Enum.Parse(destType, s);
             if (destType == typeof(int))
-                return Int32.Parse(s); 
+                return int.Parse(s);
             if (destType == typeof(double))
-                return double.Parse(s);
+                return double.Parse(s.Replace(".", ","));
 
             if (destType == typeof(string))
                 return s;

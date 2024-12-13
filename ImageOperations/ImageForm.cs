@@ -1,13 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using PropertyAttributes = System.Reflection.PropertyAttributes;
 
 namespace ImageOperations
 {
@@ -51,9 +45,9 @@ namespace ImageOperations
             var r = new int[256];
             var g = new int[256];
             var b = new int[256];
-            for (int i = 0; i < bitmap.Width; i++)
+            for (var i = 0; i < bitmap.Width; i++)
             {
-                for (int j = 0; j < bitmap.Height; j++)
+                for (var j = 0; j < bitmap.Height; j++)
                 {
                     var color = bitmap.GetPixel(i, j);
                     var grayscaled = (color.R + color.G + color.B) / 3;
@@ -64,7 +58,7 @@ namespace ImageOperations
                 }
             }
 
-            for (int i = 0; i < 256; i++)
+            for (var i = 0; i < 256; i++)
             {
                 rgbSeries.Points.AddXY(i, rgb[i]);
                 rSeries.Points.AddXY(i, r[i]);
@@ -90,7 +84,7 @@ namespace ImageOperations
             var effect = EffectOptionsWindow.ConfigureEffect(effectType);
             if (effect == null)
                 return;
-            
+
             updateImage(effect.Emit(pictureBox.Image));
         }
     }

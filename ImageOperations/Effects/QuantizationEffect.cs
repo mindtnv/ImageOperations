@@ -1,16 +1,15 @@
 ﻿using System.Drawing;
-using System.Drawing.Imaging;
 
 namespace ImageOperations.Effects
 {
     public class QuantizationEffect : IEffect
     {
+        public int Levels { get; set; }
+
         public QuantizationEffect(int levels)
         {
             Levels = levels;
         }
-
-        public int Levels { get; set; }
 
         public Image Emit(Image source)
         {

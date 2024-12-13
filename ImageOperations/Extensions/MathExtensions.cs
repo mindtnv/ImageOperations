@@ -12,6 +12,7 @@
 
             return value;
         }
+
         public static int Clamp(int min, int max, int value)
         {
             if (value < min)

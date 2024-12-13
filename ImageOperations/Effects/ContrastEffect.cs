@@ -1,17 +1,16 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using ImageOperations.Extensions;
 
 namespace ImageOperations.Effects
 {
     public class ContrastEffect : IEffect
     {
+        public int Contrast { get; set; }
+
         public ContrastEffect(int contrast)
         {
             Contrast = contrast;
         }
-
-        public int Contrast { get; set; }
 
         public Image Emit(Image source)
         {

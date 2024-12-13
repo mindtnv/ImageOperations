@@ -1,19 +1,18 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using ImageOperations.Extensions;
 
 namespace ImageOperations.Effects
 {
     public class NegativeWithClampEffect : IEffect
     {
+        public int Min { get; set; }
+        public int Max { get; set; }
+
         public NegativeWithClampEffect(int min, int max)
         {
             Min = min;
             Max = max;
         }
-
-        public int Min { get; set; }
-        public int Max { get; set; }
 
         public Image Emit(Image source)
         {

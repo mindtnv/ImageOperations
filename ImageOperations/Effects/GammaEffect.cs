@@ -5,12 +5,12 @@ namespace ImageOperations.Effects
 {
     public class GammaEffect : IEffect
     {
+        public double Gamma { get; set; }
+
         public GammaEffect(double gamma)
         {
             Gamma = gamma;
         }
-
-        public double Gamma { get; set; }
 
         public Image Emit(Image source)
         {

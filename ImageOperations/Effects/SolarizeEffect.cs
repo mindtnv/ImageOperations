@@ -5,18 +5,11 @@ namespace ImageOperations.Effects
 {
     public class SolarizeEffect : IEffect
     {
+        public int Value { get; set; }
+
         public SolarizeEffect(int value)
         {
             Value = value;
-        }
-
-        public int Value { get; set; }
-        
-        private static int Solarize(int colorValue, int value)
-        {
-            var c = Math.Pow(colorValue / 255.0, 1);
-            var solarizedValue = c * 255.0;
-            return (int) (solarizedValue < value ? 255.0 - solarizedValue : solarizedValue);
         }
 
         public Image Emit(Image source)
@@ -37,6 +30,13 @@ namespace ImageOperations.Effects
             }
 
             return image;
+        }
+
+        private static int Solarize(int colorValue, int value)
+        {
+            var c = Math.Pow(colorValue / 255.0, 1);
+            var solarizedValue = c * 255.0;
+            return (int) (solarizedValue < value ? 255.0 - solarizedValue : solarizedValue);
         }
     }
 }

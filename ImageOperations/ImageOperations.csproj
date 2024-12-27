@@ -109,6 +109,7 @@
         <Compile Include="EffectsWindow.cs" />
         <Compile Include="Effects\CircleDetectionEffect.cs" />
         <Compile Include="Effects\ContrastEffect.cs" />
+        <Compile Include="Effects\DetectNumbersEffect.cs" />
         <Compile Include="Effects\GammaEffect.cs" />
         <Compile Include="Effects\GrayscaleEffect.cs" />
         <Compile Include="Effects\IEffect.cs" />
